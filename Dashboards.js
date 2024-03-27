@@ -1,12 +1,19 @@
-function initViz() {
-    var containerDiv = document.getElementById("vizContainer"),
-        url = "https://public.tableau.com/app/profile/katelin.wooden/viz/OfficeStoreSalesReport/OfficeStoreSalesReport",
-        options = {
-        hideTabs: true,
-        onFirstInteractive: function () {
-        console.log("Run this code when the viz has finished loading.");
-        }
-        };
+console.log("I am working");
 
-    var viz = new tableau.Viz(containerDiv, url, options);
+const containerDiv = document.getElementById("vizContainer");
+
+// const url = "https://public.tableau.com/views/LearnEmbeddedAnalytics/SalesOverviewDashboard";
+ const url = "https://public.tableau.com/views/CreditCardSpendings_17109085751400/YearlyCreditCardSpendings";
+
+const options = {
+    hideTabs: true,
+    onFirstInteractive: function() {
+        console.log("Dashboard is ready!")
+    }
+};
+
+function initViz() {
+    let viz = new tableau.Viz(containerDiv, url, options);
 }
+
+document.addEventListener('DOMContentLoaded', initViz);
