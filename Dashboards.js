@@ -9,5 +9,4 @@ function initViz() {
         };
 
     var viz = new tableau.Viz(containerDiv, url, options);
-    // Create a viz object and embed it in the container div. 
-    }
+}
