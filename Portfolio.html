@@ -67,58 +67,104 @@
         <div class="row py-lg-5">
             <div class="col-lg-6 col-md-8 mx-auto">
                 <h1 class="fw-light">Portfolio</h1>
-                <p class="lead text-muted">Data visualization is arguably the most powerful tool when it comes to data analytics. It allows both technical & non-technical people to uncover trends & insights. Below, I showcase some of my personal projects in <b style="color: black;">Tableau</b>.</p>
-                <a class="text-info" href="https://public.tableau.com/app/profile/katelin.wooden/vizzes">Click here to visit my Tableau Public Portfolio</a>
+                <p class="lead text-muted"><b style="color: black;">SQL</b> is . Data visualization is arguably the most powerful tool when it comes to data analytics. It allows both technical & non-technical people to uncover trends & insights. Below, I showcase some of my personal projects in <b style="color: black;">Tableau</b>.</p>
+                <a class="text-info" href="https://public.tableau.com/app/profile/katelin.wooden/vizzes">Click here to visit my Tableau Public Profile</a>
             </div>
         </div>
     </section>
     <!-- END OF TOP -->
 
-
-    <!-- DASHBOARDS -->
-    <div class="containter">
-        <div id="vizContainer">
-            <!-- Credit Card -->
-            <div class='tableauPlaceholder' id='viz1711558358279' 
-                style='position: relative'>
-                <noscript>
-                    <a href='#'>
-                        <img alt='Yearly Credit Card Spendings ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Cr&#47;CreditCardSpendings_17109085751400&#47;YearlyCreditCardSpendings&#47;1_rss.png' style='border: none' />
-                    </a></noscript>
-                <object class='tableauViz'  style='display:none;'>
-                    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
-                    <param name='embed_code_version' value='3' /> 
-                    <param name='site_root' value='' />
-                    <param name='name' value='CreditCardSpendings_17109085751400&#47;YearlyCreditCardSpendings' /><param name='tabs' value='no' />
-                    <param name='toolbar' value='yes' />
-                    <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Cr&#47;CreditCardSpendings_17109085751400&#47;YearlyCreditCardSpendings&#47;1.png' /> 
-                    <param name='animate_transition' value='yes' />
-                    <param name='display_static_image' value='yes' />
-                    <param name='display_spinner' value='yes' />
-                    <param name='display_overlay' value='yes' />
-                    <param name='display_count' value='yes' />
-                    <param name='language' value='en-US' />
-                </object></div>  
-
-                <script type='text/javascript'>                    
-                    var divElement = document.getElementById('viz1711558358279');
-                    var vizElement = divElement.getElementsByTagName('object')[0];
-                    if ( divElement.offsetWidth > 800 ) { 
-                        vizElement.style.width='1200px';vizElement.style.height='1527px';
-                    } else if ( divElement.offsetWidth > 500 ) {
-                        vizElement.style.width='1200px';vizElement.style.height='1527px';
-                    } else { 
-                        vizElement.style.width='100%';vizElement.style.height='4477px';
-                    } 
-                    var scriptElement = document.createElement('script'); 
-                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-                    vizElement.parentNode.insertBefore(scriptElement, vizElement);
-                </script>
-                <!-- END of Credit Card -->
-
-            <!--<script src="Dashboards.js"></script>-->
+    <!-- SQL PROJECTS -->
+    <section class="container py-3 bg-secondary">
+        <div class="container">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h2 class="text-center pt-2">SQL</h2>
+                <p class="text-center pb-3">Below are a few SQL projects I have done in the workplace. For security reasons, I am unable to provide the code, reports, & visualizations mentioned.</p>
+            </div>
         </div>
-    </div>
+        <div class="container my-2 py-2">
+            <h4>Instructional Method Pass & Drop Rates</h4>
+            <p>- I wrote a query that found pass rates & drop rates for first-time students broken out by instructional method & optionally student demographics
+                <br>- I had to use lots of case statements to allow for proper filtering in the dashboard and lots of joins
+                <br>- I put this into an interactive Tableau dashboard that allowed users to see pass rates and drop rates in each instructional method over the past five years in bar charts & trendlines
+                <br>- This was also broken out by student demographics including race, gender, age group, & class standing to see which of the categories within those demographics have a higher pass rate
+                <br>- Users were also able to look at this for specific courses using a filter and there was a dashboard tab for looking at developmental math & English as requested</p>
+            <h4>Housing Credit Check</h4>
+            <p>- I was given an Excel file with a list of student names & id's who were currently living in housing that I had to retrieve matching data for
+                <br>- In Excel, I added a column for the insert statement so that I could use it for a temporary table
+                <br>- I created a temporary table in the database & inserted the rows of the student's names & id's into it
+                <br>- I then joined this table with the student table in our database on ID & selected the requested fields that corresponded to that student from the student table 
+                <br>- I also had to join that to the student history table so that I could calculate the total number of credits that a student is currently enrolled in because the purpose of this request was to make sure that all students who were currently in housing met the credit enrollment requirement
+                <br>- I then exported this data result set directly from Toad as an Excel file & sent it to the stakeholder</h4>
+        <h4>Students with Holds</h4>
+            <p>- I wrote a query that returned students who have holds on their status based on date, hold code selection, & release status sections which was written as a case statement
+                <br>- I put this into Argos to create a report that allowed the user to select a date that would retrieve holds placed on or after it, select one or multiple hold types, & the option to select a release status
+                <br>- This would then return all students who applied to the criteria. It would return student ID, name, hold code, hold description, the date the hold was placed, the date the hold was released, the release status, & who placed the code
+                <br>- Argos uses variables in the SQL query that are implemented into the where statements which is what makes the filters work
+            <h4>Grads Who Were WSU Undergrads</h4>
+            <p>- I was requested to find the percentage of students who are in the graduate nursing program for a selected term who previously attended WSU & who transferred to WSU specifically for the graduate nursing program
+                <br>- I wrote the query for this that found grad students who were currently enrolled, joined this to the program of study table to return those current grad students with their department, & joined students who were previous WSU students by checking if they were actively enrolled with an undergraduate admit code
+                <br>- This query primarily included window functions & left joins
+                <br>- I then put it into Tableau to show the percentage in a bar chart & allow the user to select the term
+                <br>- I also allowed the user to select the department so that this dashboard could be used for all departments rather than just nursing which was what this request revolved around. This way, it could be used by others & prevent further requests for other departments 
+        </div>
+    </section>
+    <!-- END SQL PROJECTS -->
+
+    <section class="container">
+        <div class="container my-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h2 class="text-center pt-2">Tableau</h2>
+                <p class="text-center pb-2">Below are a few Tableau projects I have personally done using Tableau Public.    
+                    <a class="text-info" href="https://public.tableau.com/app/profile/katelin.wooden/vizzes">Click here to visit my Tableau Public Profile</a>
+                </p>
+            </div>
+        </div>
+        <!-- DASHBOARDS -->
+        <div class="containter">
+            <div id="vizContainer">
+                <!-- Credit Card -->
+                <div class='tableauPlaceholder' id='viz1711558358279' 
+                    style='position: relative'>
+                    <noscript>
+                        <a href='#'>
+                            <img alt='Yearly Credit Card Spendings ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Cr&#47;CreditCardSpendings_17109085751400&#47;YearlyCreditCardSpendings&#47;1_rss.png' style='border: none' />
+                        </a></noscript>
+                    <object class='tableauViz'  style='display:none;'>
+                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+                        <param name='embed_code_version' value='3' /> 
+                        <param name='site_root' value='' />
+                        <param name='name' value='CreditCardSpendings_17109085751400&#47;YearlyCreditCardSpendings' /><param name='tabs' value='no' />
+                        <param name='toolbar' value='yes' />
+                        <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Cr&#47;CreditCardSpendings_17109085751400&#47;YearlyCreditCardSpendings&#47;1.png' /> 
+                        <param name='animate_transition' value='yes' />
+                        <param name='display_static_image' value='yes' />
+                        <param name='display_spinner' value='yes' />
+                        <param name='display_overlay' value='yes' />
+                        <param name='display_count' value='yes' />
+                        <param name='language' value='en-US' />
+                    </object></div>  
+
+                    <script type='text/javascript'>                    
+                        var divElement = document.getElementById('viz1711558358279');
+                        var vizElement = divElement.getElementsByTagName('object')[0];
+                        if ( divElement.offsetWidth > 800 ) { 
+                            vizElement.style.width='1200px';vizElement.style.height='1527px';
+                        } else if ( divElement.offsetWidth > 500 ) {
+                            vizElement.style.width='1200px';vizElement.style.height='1527px';
+                        } else { 
+                            vizElement.style.width='100%';vizElement.style.height='4477px';
+                        } 
+                        var scriptElement = document.createElement('script'); 
+                        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                    </script>
+                    <!-- END of Credit Card -->
+
+                <!--<script src="Dashboards.js"></script>-->
+            </div>
+        </div>
+    </section>
     <!-- END OF DASHBOARDS-->
 
 
